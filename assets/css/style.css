@@ -177,12 +177,4 @@ body {
     height: 0.4rem;
 }
 
-#player-card12 {
-
-    background-image: url('/assets/img/badge_gold.webp');
-    background-size: cover; 
-    background-position: center; 
-    color: white; 
-    text-align: center;
-}
 
