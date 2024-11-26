@@ -1,0 +1,173 @@
+body {
+    background-color: rgb(102, 100, 100);
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    height: 100vh;
+    margin: 0;
+}
+
+.form-container {
+    
+    width: 100%;
+    max-width: 600px; 
+}
+
+.container {
+    
+    display: flex;
+    justify-content: flex-end;
+}
+
+.formation-field {
+
+    padding-left: 0%;
+    margin-right: 20px;
+    box-sizing: border-box;
+    width: 300rem;
+    height: 110vh;
+    background-image: url('/assets/img/stadium_background.webp');
+    background-size: cover; 
+    background-position: center; 
+    color: white; 
+    text-align: center; 
+    display: grid;
+    justify-content: center;
+    /* align-items: center; */
+
+}
+
+#player-card1 {
+    
+    box-sizing: border-box;
+    width: 6rem;
+    height: 8rem;
+    background-image: url('/assets/img/badge_gold.webp');
+    background-size: cover; 
+    background-position: center; 
+    color: white; 
+    text-align: center; 
+    transform: translate(-14rem, 5rem);
+}
+
+#player-card2 {
+
+    
+    box-sizing: border-box;
+    width: 6rem;
+    height: 8rem;
+    background-image: url('/assets/img/badge_gold.webp');
+    background-size: cover; 
+    background-position: center; 
+    color: white; 
+    text-align: center; 
+    transform: translate(0rem, -5rem);
+}
+#player-card3 {
+   
+    box-sizing: border-box;
+    width: 6rem;
+    height: 8rem;
+    background-image: url('/assets/img/badge_gold.webp');
+    background-size: cover; 
+    background-position: center; 
+    color: white; 
+    text-align: center; 
+    transform: translate(14rem, -11rem);
+}
+#player-card4 {
+    
+    box-sizing: border-box;
+    width: 6rem;
+    height: 8rem;
+    background-image: url('/assets/img/badge_gold.webp');
+    background-size: cover; 
+    background-position: center; 
+    color: white; 
+    text-align: center; 
+    transform: translate(-18rem, -9rem);
+}
+#player-card5 {
+   
+    box-sizing: border-box;
+    width: 6rem;
+    height: 8rem;
+    background-image: url('/assets/img/badge_gold.webp');
+    background-size: cover; 
+    background-position: center; 
+    color: white; 
+    text-align: center; 
+    transform: translate(0rem, -15rem);
+}
+#player-card6 {
+    
+    box-sizing: border-box;
+    width: 6rem;
+    height: 8rem;
+    background-image: url('/assets/img/badge_gold.webp');
+    background-size: cover; 
+    background-position: center; 
+    color: white; 
+    text-align: center; 
+    transform: translate(18rem, -25rem);
+}
+#player-card7 {
+   
+    box-sizing: border-box;
+    width: 6rem;
+    height: 8rem;
+    background-image: url('/assets/img/badge_gold.webp');
+    background-size: cover; 
+    background-position: center; 
+    color: white; 
+    text-align: center; 
+    transform: translate(-24rem, -22rem);
+}
+#player-card8 {
+    
+    box-sizing: border-box;
+    width: 6rem;
+    height: 8rem;
+    background-image: url('/assets/img/badge_gold.webp');
+    background-size: cover; 
+    background-position: center; 
+    color: white; 
+    text-align: center; 
+    transform: translate(-12rem, -26rem);
+}
+#player-card9 {
+   
+    box-sizing: border-box;
+    width: 6rem;
+    height: 8rem;
+    background-image: url('/assets/img/badge_gold.webp');
+    background-size: cover; 
+    background-position: center; 
+    color: white; 
+    text-align: center; 
+    transform: translate(12rem, -34rem);
+}
+#player-card10 {
+    
+    box-sizing: border-box;
+    width: 6rem;
+    height: 8rem;
+    background-image: url('/assets/img/badge_gold.webp');
+    background-size: cover; 
+    background-position: center; 
+    color: white; 
+    text-align: center; 
+    transform: translate(24rem, -46rem);
+}
+#player-card11 {
+    
+    box-sizing: border-box;
+    width: 6rem;
+    height: 8rem;
+    background-image: url('/assets/img/badge_gold.webp');
+    background-size: cover; 
+    background-position: center; 
+    color: white; 
+    text-align: center; 
+    transform: translate(0rem, -42rem);
+}
