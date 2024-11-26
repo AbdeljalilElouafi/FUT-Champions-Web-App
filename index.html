@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,8 +8,9 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
+
 <body>
-    
+
 
     <div class="container">
 
@@ -16,47 +18,47 @@
 
             <div id="player-card1" class="player-card">
 
-                
+
             </div>
             <div id="player-card2" class="player-card">
-                
-                
+
+
             </div>
             <div id="player-card3" class="player-card">
-                
-                
+
+
             </div>
             <div id="player-card4" class="player-card">
-                
-                
+
+
             </div>
             <div id="player-card5" class="player-card">
-                
-                
+
+
             </div>
             <div id="player-card6" class="player-card">
-                
-                
+
+
             </div>
             <div id="player-card7" class="player-card">
-                
-                
+
+
             </div>
             <div id="player-card8" class="player-card">
-                
-                
+
+
             </div>
             <div id="player-card9" class="player-card">
-                
-                
+
+
             </div>
             <div id="player-card10" class="player-card">
-                
-                
+
+
             </div>
             <div id="player-card11" class="player-card">
-                
-                
+
+
             </div>
 
 
@@ -64,19 +66,21 @@
 
         </div>
 
-        <div class="form-container max-w-lg mx-auto bg-white p-8 rounded shadow-lg">
+
+        <div class="form-container max-w-lg mx-auto max-h-screen overflow-y-scroll bg-white p-8 rounded shadow-lg">
 
             <form id="playerForm">
                 <div class="mb-4">
                     <label for="name" class="block text-gray-700 font-medium">Name</label>
                     <input type="text" id="name" name="name" class="w-full p-2 border border-gray-300 rounded" required>
                 </div>
-    
+
                 <div class="mb-4">
                     <label for="photo" class="block text-gray-700 font-medium">Photo URL</label>
-                    <input type="url" id="photo" name="photo" class="w-full p-2 border border-gray-300 rounded" required>
+                    <input type="url" id="photo" name="photo" class="w-full p-2 border border-gray-300 rounded"
+                        required>
                 </div>
-    
+
                 <div class="mb-4">
                     <label for="position" class="block text-gray-700 font-medium">Position</label>
                     <select id="position" name="position" class="w-full p-2 border border-gray-300 rounded" required>
@@ -92,62 +96,70 @@
                         <option value="ST">ST</option>
                     </select>
                 </div>
-    
+
                 <div class="mb-4">
                     <label for="nationality" class="block text-gray-700 font-medium">Nationality</label>
-                    <input type="text" id="nationality" name="nationality" class="w-full p-2 border border-gray-300 rounded" required>
+                    <input type="text" id="nationality" name="nationality"
+                        class="w-full p-2 border border-gray-300 rounded" required>
                 </div>
-    
+
                 <div class="mb-4">
                     <label for="flag" class="block text-gray-700 font-medium">Flag URL</label>
                     <input type="url" id="flag" name="flag" class="w-full p-2 border border-gray-300 rounded" required>
                 </div>
-    
+
                 <div class="mb-4">
                     <label for="club" class="block text-gray-700 font-medium">Club</label>
                     <input type="text" id="club" name="club" class="w-full p-2 border border-gray-300 rounded" required>
                 </div>
-    
+
                 <div class="mb-4">
                     <label for="logo" class="block text-gray-700 font-medium">Club Logo URL</label>
                     <input type="url" id="logo" name="logo" class="w-full p-2 border border-gray-300 rounded" required>
                 </div>
-    
+
                 <div class="mb-4">
                     <label for="rating" class="block text-gray-700 font-medium">Rating</label>
-                    <input type="number" id="rating" name="rating" min="0" max="100" class="w-full p-2 border border-gray-300 rounded" required>
+                    <input type="number" id="rating" name="rating" min="0" max="100"
+                        class="w-full p-2 border border-gray-300 rounded" required>
                 </div>
-    
+
                 <div class="mb-4">
                     <label for="pace" class="block text-gray-700 font-medium">Pace</label>
-                    <input type="number" id="pace" name="pace" min="0" max="100" class="w-full p-2 border border-gray-300 rounded" required>
+                    <input type="number" id="pace" name="pace" min="0" max="100"
+                        class="w-full p-2 border border-gray-300 rounded" required>
                 </div>
-    
+
                 <div class="mb-4">
                     <label for="shooting" class="block text-gray-700 font-medium">Shooting</label>
-                    <input type="number" id="shooting" name="shooting" min="0" max="100" class="w-full p-2 border border-gray-300 rounded" required>
+                    <input type="number" id="shooting" name="shooting" min="0" max="100"
+                        class="w-full p-2 border border-gray-300 rounded" required>
                 </div>
-    
+
                 <div class="mb-4">
                     <label for="passing" class="block text-gray-700 font-medium">Passing</label>
-                    <input type="number" id="passing" name="passing" min="0" max="100" class="w-full p-2 border border-gray-300 rounded" required>
+                    <input type="number" id="passing" name="passing" min="0" max="100"
+                        class="w-full p-2 border border-gray-300 rounded" required>
                 </div>
-    
+
                 <div class="mb-4">
                     <label for="dribbling" class="block text-gray-700 font-medium">Dribbling</label>
-                    <input type="number" id="dribbling" name="dribbling" min="0" max="100" class="w-full p-2 border border-gray-300 rounded" required>
+                    <input type="number" id="dribbling" name="dribbling" min="0" max="100"
+                        class="w-full p-2 border border-gray-300 rounded" required>
                 </div>
-    
+
                 <div class="mb-4">
                     <label for="defending" class="block text-gray-700 font-medium">Defending</label>
-                    <input type="number" id="defending" name="defending" min="0" max="100" class="w-full p-2 border border-gray-300 rounded" required>
+                    <input type="number" id="defending" name="defending" min="0" max="100"
+                        class="w-full p-2 border border-gray-300 rounded" required>
                 </div>
-    
+
                 <div class="mb-4">
                     <label for="physical" class="block text-gray-700 font-medium">Physical</label>
-                    <input type="number" id="physical" name="physical" min="0" max="100" class="w-full p-2 border border-gray-300 rounded" required>
+                    <input type="number" id="physical" name="physical" min="0" max="100"
+                        class="w-full p-2 border border-gray-300 rounded" required>
                 </div>
-    
+
                 <div class="mb-6 text-center">
                     <button type="submit" class="bg-black text-white p-2 rounded hover:bg-gray-400">Add Player</button>
                 </div>
@@ -155,10 +167,1187 @@
 
         </div>
 
-        <div class="bench">
+
+    </div>
+
+
+    <div class="bench">
+
+
+        <div id="player-card12" class="player-card">
+            <div class="rate-position">
+                <div class="player-rating" id="player-rating">
+                    <p>99</p>
+                </div>
+                <div class="player-position" id="player-position">
+                    <p>ST</p>
+                </div>
+            </div>
+            <div class="player-photo" id="player-photo">
+                <img src="https://cdn.sofifa.net/players/158/023/25_120.png" alt="">
+            </div>
+            <div class="player-name" id="player-name">
+                <p>Mbappé</p>
+            </div>
+            <div class="player-stats" id="player-stats">
+
+
+                <div class="p-stats">
+                    <div>
+                        <p>PAC</p>
+                    </div>
+                    <div>
+                        <p>SHO</p>
+                    </div>
+                    <div>
+                        <p>PAS</p>
+                    </div>
+                    <div>
+                        <p>DRI</p>
+                    </div>
+                    <div>
+                        <p>DEF</p>
+                    </div>
+                    <div>
+                        <p>PHY</p>
+                    </div>
+                </div>
+                <div class="stats-num">
+
+                    <div>
+                        <p>99</p>
+                    </div>
+                    <div>
+                        <p>99</p>
+                    </div>
+                    <div>
+                        <p>99</p>
+                    </div>
+                    <div>
+                        <p>99</p>
+                    </div>
+                    <div>
+                        <p>99</p>
+                    </div>
+                    <div>
+                        <p>99</p>
+                    </div>
+
+
+                </div>
+                
+                
+
+
+            </div>
+
+            <div class="logos" id="logos">
+
+                <div class="country-logo">
+
+                    <img src="https://cdn.sofifa.net/flags/ar.png" alt="">
+
+                </div>
+                
+                <div class="team-logo">
+
+                    <img src="https://cdn.sofifa.net/meta/team/239235/120.png" alt="">
+                </div>
+
+            </div>
 
 
 
+        </div>
+        <div id="player-card13" class="player-card">
+            <div class="rate-position">
+                <div class="player-rating" id="player-rating">
+                    <p>99</p>
+                </div>
+                <div class="player-position" id="player-position">
+                    <p>ST</p>
+                </div>
+            </div>
+            <div class="player-photo" id="player-photo">
+                <img src="https://cdn.sofifa.net/players/158/023/25_120.png" alt="">
+            </div>
+            <div class="player-name" id="player-name">
+                <p>Mbappé</p>
+            </div>
+            <div class="player-stats" id="player-stats">
+
+
+                <div class="p-stats">
+                    <div>
+                        <p>PAC</p>
+                    </div>
+                    <div>
+                        <p>SHO</p>
+                    </div>
+                    <div>
+                        <p>PAS</p>
+                    </div>
+                    <div>
+                        <p>DRI</p>
+                    </div>
+                    <div>
+                        <p>DEF</p>
+                    </div>
+                    <div>
+                        <p>PHY</p>
+                    </div>
+                </div>
+                <div class="stats-num">
+
+                    <div>
+                        <p>99</p>
+                    </div>
+                    <div>
+                        <p>99</p>
+                    </div>
+                    <div>
+                        <p>99</p>
+                    </div>
+                    <div>
+                        <p>99</p>
+                    </div>
+                    <div>
+                        <p>99</p>
+                    </div>
+                    <div>
+                        <p>99</p>
+                    </div>
+
+
+                </div>
+                
+                
+
+
+            </div>
+
+            <div class="logos" id="logos">
+
+                <div class="country-logo">
+
+                    <img src="https://cdn.sofifa.net/flags/ar.png" alt="">
+
+                </div>
+                
+                <div class="team-logo">
+
+                    <img src="https://cdn.sofifa.net/meta/team/239235/120.png" alt="">
+                </div>
+
+            </div>
+        </div>
+        <div id="player-card14" class="player-card">
+
+            <div class="rate-position">
+                <div class="player-rating" id="player-rating">
+                    <p>99</p>
+                </div>
+                <div class="player-position" id="player-position">
+                    <p>ST</p>
+                </div>
+            </div>
+            <div class="player-photo" id="player-photo">
+                <img src="https://cdn.sofifa.net/players/158/023/25_120.png" alt="">
+            </div>
+            <div class="player-name" id="player-name">
+                <p>Mbappé</p>
+            </div>
+            <div class="player-stats" id="player-stats">
+
+
+                <div class="p-stats">
+                    <div>
+                        <p>PAC</p>
+                    </div>
+                    <div>
+                        <p>SHO</p>
+                    </div>
+                    <div>
+                        <p>PAS</p>
+                    </div>
+                    <div>
+                        <p>DRI</p>
+                    </div>
+                    <div>
+                        <p>DEF</p>
+                    </div>
+                    <div>
+                        <p>PHY</p>
+                    </div>
+                </div>
+                <div class="stats-num">
+
+                    <div>
+                        <p>99</p>
+                    </div>
+                    <div>
+                        <p>99</p>
+                    </div>
+                    <div>
+                        <p>99</p>
+                    </div>
+                    <div>
+                        <p>99</p>
+                    </div>
+                    <div>
+                        <p>99</p>
+                    </div>
+                    <div>
+                        <p>99</p>
+                    </div>
+
+
+                </div>
+                
+                
+
+
+            </div>
+
+            <div class="logos" id="logos">
+
+                <div class="country-logo">
+
+                    <img src="https://cdn.sofifa.net/flags/ar.png" alt="">
+
+                </div>
+                
+                <div class="team-logo">
+
+                    <img src="https://cdn.sofifa.net/meta/team/239235/120.png" alt="">
+                </div>
+
+            </div>
+
+        </div>
+        <div id="player-card15" class="player-card">
+
+            <div class="rate-position">
+                <div class="player-rating" id="player-rating">
+                    <p>99</p>
+                </div>
+                <div class="player-position" id="player-position">
+                    <p>ST</p>
+                </div>
+            </div>
+            <div class="player-photo" id="player-photo">
+                <img src="https://cdn.sofifa.net/players/158/023/25_120.png" alt="">
+            </div>
+            <div class="player-name" id="player-name">
+                <p>Mbappé</p>
+            </div>
+            <div class="player-stats" id="player-stats">
+
+
+                <div class="p-stats">
+                    <div>
+                        <p>PAC</p>
+                    </div>
+                    <div>
+                        <p>SHO</p>
+                    </div>
+                    <div>
+                        <p>PAS</p>
+                    </div>
+                    <div>
+                        <p>DRI</p>
+                    </div>
+                    <div>
+                        <p>DEF</p>
+                    </div>
+                    <div>
+                        <p>PHY</p>
+                    </div>
+                </div>
+                <div class="stats-num">
+
+                    <div>
+                        <p>99</p>
+                    </div>
+                    <div>
+                        <p>99</p>
+                    </div>
+                    <div>
+                        <p>99</p>
+                    </div>
+                    <div>
+                        <p>99</p>
+                    </div>
+                    <div>
+                        <p>99</p>
+                    </div>
+                    <div>
+                        <p>99</p>
+                    </div>
+
+
+                </div>
+                
+                
+
+
+            </div>
+
+            <div class="logos" id="logos">
+
+                <div class="country-logo">
+
+                    <img src="https://cdn.sofifa.net/flags/ar.png" alt="">
+
+                </div>
+                
+                <div class="team-logo">
+
+                    <img src="https://cdn.sofifa.net/meta/team/239235/120.png" alt="">
+                </div>
+
+            </div>
+
+        </div>
+        <div id="player-card16" class="player-card">
+
+            <div class="rate-position">
+                <div class="player-rating" id="player-rating">
+                    <p>99</p>
+                </div>
+                <div class="player-position" id="player-position">
+                    <p>ST</p>
+                </div>
+            </div>
+            <div class="player-photo" id="player-photo">
+                <img src="https://cdn.sofifa.net/players/158/023/25_120.png" alt="">
+            </div>
+            <div class="player-name" id="player-name">
+                <p>Mbappé</p>
+            </div>
+            <div class="player-stats" id="player-stats">
+
+
+                <div class="p-stats">
+                    <div>
+                        <p>PAC</p>
+                    </div>
+                    <div>
+                        <p>SHO</p>
+                    </div>
+                    <div>
+                        <p>PAS</p>
+                    </div>
+                    <div>
+                        <p>DRI</p>
+                    </div>
+                    <div>
+                        <p>DEF</p>
+                    </div>
+                    <div>
+                        <p>PHY</p>
+                    </div>
+                </div>
+                <div class="stats-num">
+
+                    <div>
+                        <p>99</p>
+                    </div>
+                    <div>
+                        <p>99</p>
+                    </div>
+                    <div>
+                        <p>99</p>
+                    </div>
+                    <div>
+                        <p>99</p>
+                    </div>
+                    <div>
+                        <p>99</p>
+                    </div>
+                    <div>
+                        <p>99</p>
+                    </div>
+
+
+                </div>
+                
+                
+
+
+            </div>
+
+            <div class="logos" id="logos">
+
+                <div class="country-logo">
+
+                    <img src="https://cdn.sofifa.net/flags/ar.png" alt="">
+
+                </div>
+                
+                <div class="team-logo">
+
+                    <img src="https://cdn.sofifa.net/meta/team/239235/120.png" alt="">
+                </div>
+
+            </div>
+
+        </div>
+        <div id="player-card17" class="player-card">
+
+            <div class="rate-position">
+                <div class="player-rating" id="player-rating">
+                    <p>99</p>
+                </div>
+                <div class="player-position" id="player-position">
+                    <p>ST</p>
+                </div>
+            </div>
+            <div class="player-photo" id="player-photo">
+                <img src="https://cdn.sofifa.net/players/158/023/25_120.png" alt="">
+            </div>
+            <div class="player-name" id="player-name">
+                <p>Mbappé</p>
+            </div>
+            <div class="player-stats" id="player-stats">
+
+
+                <div class="p-stats">
+                    <div>
+                        <p>PAC</p>
+                    </div>
+                    <div>
+                        <p>SHO</p>
+                    </div>
+                    <div>
+                        <p>PAS</p>
+                    </div>
+                    <div>
+                        <p>DRI</p>
+                    </div>
+                    <div>
+                        <p>DEF</p>
+                    </div>
+                    <div>
+                        <p>PHY</p>
+                    </div>
+                </div>
+                <div class="stats-num">
+
+                    <div>
+                        <p>99</p>
+                    </div>
+                    <div>
+                        <p>99</p>
+                    </div>
+                    <div>
+                        <p>99</p>
+                    </div>
+                    <div>
+                        <p>99</p>
+                    </div>
+                    <div>
+                        <p>99</p>
+                    </div>
+                    <div>
+                        <p>99</p>
+                    </div>
+
+
+                </div>
+                
+                
+
+
+            </div>
+
+            <div class="logos" id="logos">
+
+                <div class="country-logo">
+
+                    <img src="https://cdn.sofifa.net/flags/ar.png" alt="">
+
+                </div>
+                
+                <div class="team-logo">
+
+                    <img src="https://cdn.sofifa.net/meta/team/239235/120.png" alt="">
+                </div>
+
+            </div>
+
+        </div>
+        <div id="player-card18" class="player-card">
+
+            <div class="rate-position">
+                <div class="player-rating" id="player-rating">
+                    <p>99</p>
+                </div>
+                <div class="player-position" id="player-position">
+                    <p>ST</p>
+                </div>
+            </div>
+            <div class="player-photo" id="player-photo">
+                <img src="https://cdn.sofifa.net/players/158/023/25_120.png" alt="">
+            </div>
+            <div class="player-name" id="player-name">
+                <p>Mbappé</p>
+            </div>
+            <div class="player-stats" id="player-stats">
+
+
+                <div class="p-stats">
+                    <div>
+                        <p>PAC</p>
+                    </div>
+                    <div>
+                        <p>SHO</p>
+                    </div>
+                    <div>
+                        <p>PAS</p>
+                    </div>
+                    <div>
+                        <p>DRI</p>
+                    </div>
+                    <div>
+                        <p>DEF</p>
+                    </div>
+                    <div>
+                        <p>PHY</p>
+                    </div>
+                </div>
+                <div class="stats-num">
+
+                    <div>
+                        <p>99</p>
+                    </div>
+                    <div>
+                        <p>99</p>
+                    </div>
+                    <div>
+                        <p>99</p>
+                    </div>
+                    <div>
+                        <p>99</p>
+                    </div>
+                    <div>
+                        <p>99</p>
+                    </div>
+                    <div>
+                        <p>99</p>
+                    </div>
+
+
+                </div>
+                
+                
+
+
+            </div>
+
+            <div class="logos" id="logos">
+
+                <div class="country-logo">
+
+                    <img src="https://cdn.sofifa.net/flags/ar.png" alt="">
+
+                </div>
+                
+                <div class="team-logo">
+
+                    <img src="https://cdn.sofifa.net/meta/team/239235/120.png" alt="">
+                </div>
+
+            </div> 
+
+        </div>
+        <div id="player-card19" class="player-card">
+
+            <div class="rate-position">
+                <div class="player-rating" id="player-rating">
+                    <p>99</p>
+                </div>
+                <div class="player-position" id="player-position">
+                    <p>ST</p>
+                </div>
+            </div>
+            <div class="player-photo" id="player-photo">
+                <img src="https://cdn.sofifa.net/players/158/023/25_120.png" alt="">
+            </div>
+            <div class="player-name" id="player-name">
+                <p>Mbappé</p>
+            </div>
+            <div class="player-stats" id="player-stats">
+
+
+                <div class="p-stats">
+                    <div>
+                        <p>PAC</p>
+                    </div>
+                    <div>
+                        <p>SHO</p>
+                    </div>
+                    <div>
+                        <p>PAS</p>
+                    </div>
+                    <div>
+                        <p>DRI</p>
+                    </div>
+                    <div>
+                        <p>DEF</p>
+                    </div>
+                    <div>
+                        <p>PHY</p>
+                    </div>
+                </div>
+                <div class="stats-num">
+
+                    <div>
+                        <p>99</p>
+                    </div>
+                    <div>
+                        <p>99</p>
+                    </div>
+                    <div>
+                        <p>99</p>
+                    </div>
+                    <div>
+                        <p>99</p>
+                    </div>
+                    <div>
+                        <p>99</p>
+                    </div>
+                    <div>
+                        <p>99</p>
+                    </div>
+
+
+                </div>
+                
+                
+
+
+            </div>
+
+            <div class="logos" id="logos">
+
+                <div class="country-logo">
+
+                    <img src="https://cdn.sofifa.net/flags/ar.png" alt="">
+
+                </div>
+                
+                <div class="team-logo">
+
+                    <img src="https://cdn.sofifa.net/meta/team/239235/120.png" alt="">
+                </div>
+
+            </div>
+
+        </div>
+        <div id="player-card20" class="player-card">
+
+            <div class="rate-position">
+                <div class="player-rating" id="player-rating">
+                    <p>99</p>
+                </div>
+                <div class="player-position" id="player-position">
+                    <p>ST</p>
+                </div>
+            </div>
+            <div class="player-photo" id="player-photo">
+                <img src="https://cdn.sofifa.net/players/158/023/25_120.png" alt="">
+            </div>
+            <div class="player-name" id="player-name">
+                <p>Mbappé</p>
+            </div>
+            <div class="player-stats" id="player-stats">
+
+
+                <div class="p-stats">
+                    <div>
+                        <p>PAC</p>
+                    </div>
+                    <div>
+                        <p>SHO</p>
+                    </div>
+                    <div>
+                        <p>PAS</p>
+                    </div>
+                    <div>
+                        <p>DRI</p>
+                    </div>
+                    <div>
+                        <p>DEF</p>
+                    </div>
+                    <div>
+                        <p>PHY</p>
+                    </div>
+                </div>
+                <div class="stats-num">
+
+                    <div>
+                        <p>99</p>
+                    </div>
+                    <div>
+                        <p>99</p>
+                    </div>
+                    <div>
+                        <p>99</p>
+                    </div>
+                    <div>
+                        <p>99</p>
+                    </div>
+                    <div>
+                        <p>99</p>
+                    </div>
+                    <div>
+                        <p>99</p>
+                    </div>
+
+
+                </div>
+                
+                
+
+
+            </div>
+
+            <div class="logos" id="logos">
+
+                <div class="country-logo">
+
+                    <img src="https://cdn.sofifa.net/flags/ar.png" alt="">
+
+                </div>
+                
+                <div class="team-logo">
+
+                    <img src="https://cdn.sofifa.net/meta/team/239235/120.png" alt="">
+                </div>
+
+            </div>
+
+        </div>
+        <div id="player-card21" class="player-card">
+
+            <div class="rate-position">
+                <div class="player-rating" id="player-rating">
+                    <p>99</p>
+                </div>
+                <div class="player-position" id="player-position">
+                    <p>ST</p>
+                </div>
+            </div>
+            <div class="player-photo" id="player-photo">
+                <img src="https://cdn.sofifa.net/players/158/023/25_120.png" alt="">
+            </div>
+            <div class="player-name" id="player-name">
+                <p>Mbappé</p>
+            </div>
+            <div class="player-stats" id="player-stats">
+
+
+                <div class="p-stats">
+                    <div>
+                        <p>PAC</p>
+                    </div>
+                    <div>
+                        <p>SHO</p>
+                    </div>
+                    <div>
+                        <p>PAS</p>
+                    </div>
+                    <div>
+                        <p>DRI</p>
+                    </div>
+                    <div>
+                        <p>DEF</p>
+                    </div>
+                    <div>
+                        <p>PHY</p>
+                    </div>
+                </div>
+                <div class="stats-num">
+
+                    <div>
+                        <p>99</p>
+                    </div>
+                    <div>
+                        <p>99</p>
+                    </div>
+                    <div>
+                        <p>99</p>
+                    </div>
+                    <div>
+                        <p>99</p>
+                    </div>
+                    <div>
+                        <p>99</p>
+                    </div>
+                    <div>
+                        <p>99</p>
+                    </div>
+
+
+                </div>
+                
+                
+
+
+            </div>
+
+            <div class="logos" id="logos">
+
+                <div class="country-logo">
+
+                    <img src="https://cdn.sofifa.net/flags/ar.png" alt="">
+
+                </div>
+                
+                <div class="team-logo">
+
+                    <img src="https://cdn.sofifa.net/meta/team/239235/120.png" alt="">
+                </div>
+
+            </div>
+
+        </div>
+        <div id="player-card22" class="player-card">
+
+            <div class="rate-position">
+                <div class="player-rating" id="player-rating">
+                    <p>99</p>
+                </div>
+                <div class="player-position" id="player-position">
+                    <p>ST</p>
+                </div>
+            </div>
+            <div class="player-photo" id="player-photo">
+                <img src="https://cdn.sofifa.net/players/158/023/25_120.png" alt="">
+            </div>
+            <div class="player-name" id="player-name">
+                <p>Mbappé</p>
+            </div>
+            <div class="player-stats" id="player-stats">
+
+
+                <div class="p-stats">
+                    <div>
+                        <p>PAC</p>
+                    </div>
+                    <div>
+                        <p>SHO</p>
+                    </div>
+                    <div>
+                        <p>PAS</p>
+                    </div>
+                    <div>
+                        <p>DRI</p>
+                    </div>
+                    <div>
+                        <p>DEF</p>
+                    </div>
+                    <div>
+                        <p>PHY</p>
+                    </div>
+                </div>
+                <div class="stats-num">
+
+                    <div>
+                        <p>99</p>
+                    </div>
+                    <div>
+                        <p>99</p>
+                    </div>
+                    <div>
+                        <p>99</p>
+                    </div>
+                    <div>
+                        <p>99</p>
+                    </div>
+                    <div>
+                        <p>99</p>
+                    </div>
+                    <div>
+                        <p>99</p>
+                    </div>
+
+
+                </div>
+                
+                
+
+
+            </div>
+
+            <div class="logos" id="logos">
+
+                <div class="country-logo">
+
+                    <img src="https://cdn.sofifa.net/flags/ar.png" alt="">
+
+                </div>
+                
+                <div class="team-logo">
+
+                    <img src="https://cdn.sofifa.net/meta/team/239235/120.png" alt="">
+                </div>
+
+            </div>
+
+        </div>
+        <div id="player-card23" class="player-card">
+
+            <div class="rate-position">
+                <div class="player-rating" id="player-rating">
+                    <p>99</p>
+                </div>
+                <div class="player-position" id="player-position">
+                    <p>ST</p>
+                </div>
+            </div>
+            <div class="player-photo" id="player-photo">
+                <img src="https://cdn.sofifa.net/players/158/023/25_120.png" alt="">
+            </div>
+            <div class="player-name" id="player-name">
+                <p>Mbappé</p>
+            </div>
+            <div class="player-stats" id="player-stats">
+
+
+                <div class="p-stats">
+                    <div>
+                        <p>PAC</p>
+                    </div>
+                    <div>
+                        <p>SHO</p>
+                    </div>
+                    <div>
+                        <p>PAS</p>
+                    </div>
+                    <div>
+                        <p>DRI</p>
+                    </div>
+                    <div>
+                        <p>DEF</p>
+                    </div>
+                    <div>
+                        <p>PHY</p>
+                    </div>
+                </div>
+                <div class="stats-num">
+
+                    <div>
+                        <p>99</p>
+                    </div>
+                    <div>
+                        <p>99</p>
+                    </div>
+                    <div>
+                        <p>99</p>
+                    </div>
+                    <div>
+                        <p>99</p>
+                    </div>
+                    <div>
+                        <p>99</p>
+                    </div>
+                    <div>
+                        <p>99</p>
+                    </div>
+
+
+                </div>
+                
+                
+
+
+            </div>
+
+            <div class="logos" id="logos">
+
+                <div class="country-logo">
+
+                    <img src="https://cdn.sofifa.net/flags/ar.png" alt="">
+
+                </div>
+                
+                <div class="team-logo">
+
+                    <img src="https://cdn.sofifa.net/meta/team/239235/120.png" alt="">
+                </div>
+
+            </div>
+
+        </div>
+        <div id="player-card24" class="player-card">
+
+            <div class="rate-position">
+                <div class="player-rating" id="player-rating">
+                    <p>99</p>
+                </div>
+                <div class="player-position" id="player-position">
+                    <p>ST</p>
+                </div>
+            </div>
+            <div class="player-photo" id="player-photo">
+                <img src="https://cdn.sofifa.net/players/158/023/25_120.png" alt="">
+            </div>
+            <div class="player-name" id="player-name">
+                <p>Mbappé</p>
+            </div>
+            <div class="player-stats" id="player-stats">
+
+
+                <div class="p-stats">
+                    <div>
+                        <p>PAC</p>
+                    </div>
+                    <div>
+                        <p>SHO</p>
+                    </div>
+                    <div>
+                        <p>PAS</p>
+                    </div>
+                    <div>
+                        <p>DRI</p>
+                    </div>
+                    <div>
+                        <p>DEF</p>
+                    </div>
+                    <div>
+                        <p>PHY</p>
+                    </div>
+                </div>
+                <div class="stats-num">
+
+                    <div>
+                        <p>99</p>
+                    </div>
+                    <div>
+                        <p>99</p>
+                    </div>
+                    <div>
+                        <p>99</p>
+                    </div>
+                    <div>
+                        <p>99</p>
+                    </div>
+                    <div>
+                        <p>99</p>
+                    </div>
+                    <div>
+                        <p>99</p>
+                    </div>
+
+
+                </div>
+                
+                
+
+
+            </div>
+
+            <div class="logos" id="logos">
+
+                <div class="country-logo">
+
+                    <img src="https://cdn.sofifa.net/flags/ar.png" alt="">
+
+                </div>
+                
+                <div class="team-logo">
+
+                    <img src="https://cdn.sofifa.net/meta/team/239235/120.png" alt="">
+                </div>
+
+            </div>
+
+        </div>
+
+        <div id="player-card25" class="player-card">
+
+            <div class="rate-position">
+                <div class="player-rating" id="player-rating">
+                    <p>99</p>
+                </div>
+                <div class="player-position" id="player-position">
+                    <p>ST</p>
+                </div>
+            </div>
+            <div class="player-photo" id="player-photo">
+                <img src="https://cdn.sofifa.net/players/158/023/25_120.png" alt="">
+            </div>
+            <div class="player-name" id="player-name">
+                <p>Mbappé</p>
+            </div>
+            <div class="player-stats" id="player-stats">
+
+
+                <div class="p-stats">
+                    <div>
+                        <p>PAC</p>
+                    </div>
+                    <div>
+                        <p>SHO</p>
+                    </div>
+                    <div>
+                        <p>PAS</p>
+                    </div>
+                    <div>
+                        <p>DRI</p>
+                    </div>
+                    <div>
+                        <p>DEF</p>
+                    </div>
+                    <div>
+                        <p>PHY</p>
+                    </div>
+                </div>
+                <div class="stats-num">
+
+                    <div>
+                        <p>99</p>
+                    </div>
+                    <div>
+                        <p>99</p>
+                    </div>
+                    <div>
+                        <p>99</p>
+                    </div>
+                    <div>
+                        <p>99</p>
+                    </div>
+                    <div>
+                        <p>99</p>
+                    </div>
+                    <div>
+                        <p>99</p>
+                    </div>
+
+
+                </div>
+                
+                
+
+
+            </div>
+
+            <div class="logos" id="logos">
+
+                <div class="country-logo">
+
+                    <img src="https://cdn.sofifa.net/flags/ar.png" alt="">
+
+                </div>
+                
+                <div class="team-logo">
+
+                    <img src="https://cdn.sofifa.net/meta/team/239235/120.png" alt="">
+                </div>
+
+            </div>
 
         </div>
 
@@ -166,6 +1355,6 @@
     </div>
 
 
-
 </body>
+
 </html>
