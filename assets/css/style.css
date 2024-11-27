@@ -1,8 +1,6 @@
 body {
-    background-color: rgb(102, 100, 100);
-    /* display: flex;
-    justify-content: flex-end; */
-    /* align-items: flex-start; */
+    background-image: url('/assets/img/background-image-3507320_1920.jpg');
+    background-size:contain;
     height: 100vh;
     margin: 0;
 }
@@ -10,7 +8,7 @@ body {
 .form-container {
     
     width: 100%;
-    max-width: 600px; 
+    /* max-width: 900px;  */
 }
 
 .container {
@@ -96,7 +94,7 @@ body {
 
 .bench {
 
-    background-color: rgb(96, 0, 0);
+    background-color: rgba(96, 82, 14, 0.673);
     border: solid 2px;
     border-radius: 20px;
     margin: 2rem;
