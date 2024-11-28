@@ -30,6 +30,8 @@ const positionsMap = {
     "GK": "player-card11",
 };
 
+
+
 function addPlayer(event) { 
     event.preventDefault();
 
@@ -96,6 +98,10 @@ function addPlayer(event) {
 
                 
 
+                saveToLocalStorage(name, position, {
+                    name, photo, position, nationality, flag, club, logo, rating, pace, shooting, passing, dribbling, defending, physical
+                });
+
                 break;
             }
         }
@@ -143,7 +149,9 @@ function addPlayer(event) {
     playerCard.querySelector("#logos .team-logo img").src = logo;
     playerCard.querySelector("#logos .team-logo img").alt = club;
 
-    
+    saveToLocalStorage(name, position, {
+        name, photo, position, nationality, flag, club, logo, rating, pace, shooting, passing, dribbling, defending, physical
+    });
 
     document.getElementById("playerForm").reset();
 }
@@ -151,6 +159,100 @@ function addPlayer(event) {
 
 
 document.getElementById("playerForm").addEventListener("submit", addPlayer);
+
+function displayFromLocalStorage() {
+    const allPlayers = JSON.parse(localStorage.getItem("players")) || {};
+
+    for (let position in allPlayers) {
+        const players = allPlayers[position];
+        players.forEach(player => {
+            if (occupiedPositions[position] === false) {
+                
+                const playerCardId = positionsMap[position];
+                const playerCard = document.getElementById(playerCardId);
+                playerCard.querySelector(".player-name p").textContent = player.name;
+                playerCard.querySelector(".player-rating p").textContent = `${player.rating}`;
+                playerCard.querySelector(".player-position p").textContent = `${player.position}`;
+                playerCard.querySelector(".player-photo img").src = player.photo;
+                playerCard.querySelector(".player-photo img").alt = player.name;
+
+                const stats = [
+                    { stat: "PAC", value: player.pace },
+                    { stat: "SHO", value: player.shooting },
+                    { stat: "PAS", value: player.passing },
+                    { stat: "DRI", value: player.dribbling },
+                    { stat: "DEF", value: player.defending },
+                    { stat: "PHY", value: player.physical },
+                ];
+
+                const statsElements = playerCard.querySelectorAll(".p-stats p");
+                const statsNumElements = playerCard.querySelectorAll(".stats-num p");
+
+                stats.forEach((element, index) => {
+                    statsElements[index].textContent = element.stat;
+                    statsNumElements[index].textContent = element.value;
+                });
+
+                playerCard.querySelector("#logos .country-logo img").src = player.flag;
+                playerCard.querySelector("#logos .country-logo img").alt = player.nationality;
+                playerCard.querySelector("#logos .team-logo img").src = player.logo;
+                playerCard.querySelector("#logos .team-logo img").alt = player.club;
+
+                occupiedPositions[position] = true; 
+            } else {
+                
+                for (let i = 12; i <= 25; i++) {
+                    const benchCard = document.getElementById(`player-card${i}`);
+                    if (!benchCard.querySelector(".player-name p").textContent) {
+                        benchCard.querySelector(".player-name p").textContent = player.name;
+                        benchCard.querySelector(".player-rating p").textContent = `${player.rating}`;
+                        benchCard.querySelector(".player-position p").textContent = `${player.position}`;
+                        benchCard.querySelector(".player-photo img").src = player.photo;
+                        benchCard.querySelector(".player-photo img").alt = player.name;
+
+                        const stats = [
+                            { stat: "PAC", value: player.pace },
+                            { stat: "SHO", value: player.shooting },
+                            { stat: "PAS", value: player.passing },
+                            { stat: "DRI", value: player.dribbling },
+                            { stat: "DEF", value: player.defending },
+                            { stat: "PHY", value: player.physical },
+                        ];
+
+                        const statsElements = benchCard.querySelectorAll(".p-stats p");
+                        const statsNumElements = benchCard.querySelectorAll(".stats-num p");
+
+                        stats.forEach((element, index) => {
+                            statsElements[index].textContent = element.stat;
+                            statsNumElements[index].textContent = element.value;
+                        });
+
+                        benchCard.querySelector("#logos .country-logo img").src = player.flag;
+                        benchCard.querySelector("#logos .country-logo img").alt = player.nationality;
+                        benchCard.querySelector("#logos .team-logo img").src = player.logo;
+                        benchCard.querySelector("#logos .team-logo img").alt = player.club;
+                        break;
+                    }
+                }
+            }
+        });
+    }
+}
+
+
+window.onload = function() {
+    displayFromLocalStorage();
+};
+
+
+function saveToLocalStorage(name, position, playerData) {
+    let allPlayers = JSON.parse(localStorage.getItem("players")) || {}; 
+    if (!allPlayers[position]) {
+        allPlayers[position] = []; 
+    }
+    allPlayers[position].push(playerData); 
+    localStorage.setItem("players", JSON.stringify(allPlayers)); 
+}
 
 
 
