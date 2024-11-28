@@ -1,10 +1,38 @@
 
 // ################### DATA display function ############
 
+
+
+const occupiedPositions = {
+    LW: false,
+    ST: false,
+    RW: false,
+    LM: false,
+    CM: false,
+    LB: false,
+    CB: false,
+    RCB: false,
+    RB: false,
+    GK: false,
+};
+
+const positionsMap = {
+    "LW": "player-card1",
+    "ST": "player-card2",
+    "RW": "player-card3",
+    "LM": "player-card4",
+    "CM": "player-card5",
+    "RM": "player-card6",
+    "LB": "player-card7",
+    "CB": "player-card8",
+    "RCB": "player-card9",
+    "RB": "player-card10",
+    "GK": "player-card11",
+};
+
 function addPlayer(event) { 
     event.preventDefault();
 
-    
     const name = document.getElementById("name").value;
     const photo = document.getElementById("photo").value;
     const position = document.getElementById("position").value;
@@ -20,57 +48,73 @@ function addPlayer(event) {
     const defending = document.getElementById("defending").value;
     const physical = document.getElementById("physical").value;
 
-    
-    const positionsMap = {
-        "LW": "player-card1",
-        "ST": "player-card2",
-        "RW": "player-card3",
-        "LM": "player-card4",
-        "CM": "player-card5",
-        "RM": "player-card6",
-        "LB": "player-card7",
-        "CB": "player-card8",
-        "RCB": "player-card9",
-        "RB": "player-card10",
-        "GK": "player-card11",
-    };
-
-    
-    const occupiedPositions = {
-
-        LW: false,
-        ST: false,
-        RW: false,
-        LM: false,
-        CDM: false,
-        LB: false,
-        CB: false,
-        CB2: false,
-        RB: false,
-        GK: false,
-    };
-
-    
-    // const bench = [];
+    console.log("before the first condition");
 
     
 
-    // if (occupiedPositions[position]) {
+    if (occupiedPositions[position]) {
+        console.log("inside the first condition");
+
         
-    //     bench.push({name, photo, position, nationality, flag, club, logo, rating, pace, shooting, passing, dribbling, defending, physical});
-    //     return;  
-    // }
 
-    
+        for (let i = 12; i <= 25; i++) {
+            const benchCard = document.getElementById(`player-card${i}`);
+            console.log("Position occupied, add to the bench");
+
+            if (!benchCard.querySelector(".player-name p").textContent) {
+                console.log("Found an empty bench card, adding player");
+
+                
+
+                benchCard.querySelector(".player-name p").textContent = name;
+                benchCard.querySelector(".player-rating p").textContent = `${rating}`;
+                benchCard.querySelector(".player-position p").textContent = `${position}`;
+                benchCard.querySelector(".player-photo img").src = photo;
+                benchCard.querySelector(".player-photo img").alt = name;
+
+                const stats = [
+                    { stat: "PAC", value: pace },
+                    { stat: "SHO", value: shooting },
+                    { stat: "PAS", value: passing },
+                    { stat: "DRI", value: dribbling },
+                    { stat: "DEF", value: defending },
+                    { stat: "PHY", value: physical },
+                ];
+
+                const statsElements = benchCard.querySelectorAll(".p-stats p");
+                const statsNumElements = benchCard.querySelectorAll(".stats-num p");
+
+                stats.forEach((element, index) => {
+                    statsElements[index].textContent = element.stat;
+                    statsNumElements[index].textContent = element.value;
+                });
+
+                benchCard.querySelector("#logos .country-logo img").src = flag;
+                benchCard.querySelector("#logos .country-logo img").alt = nationality;
+                benchCard.querySelector("#logos .team-logo img").src = logo;
+                benchCard.querySelector("#logos .team-logo img").alt = club;
+
+                
+
+                break;
+            }
+        }
+
+        
+
+        return;
+    }
+
+    console.log("passed the whole condition");
+
+   
+
     occupiedPositions[position] = true;
-
-    
     const playerCardId = positionsMap[position];
-
-    
     const playerCard = document.getElementById(playerCardId);
 
     
+
     playerCard.querySelector(".player-name p").textContent = name;
     playerCard.querySelector(".player-rating p").textContent = `${rating}`;
     playerCard.querySelector(".player-position p").textContent = `${position}`;
@@ -78,12 +122,12 @@ function addPlayer(event) {
     playerCard.querySelector(".player-photo img").alt = name;
 
     const stats = [
-        {stat: "PAC", value: pace},
-        {stat: "SHO", value: shooting},
-        {stat: "PAS", value: passing},
-        {stat: "DRI", value: dribbling},
-        {stat: "DEF", value: defending},
-        {stat: "PHY", value: physical},
+        { stat: "PAC", value: pace },
+        { stat: "SHO", value: shooting },
+        { stat: "PAS", value: passing },
+        { stat: "DRI", value: dribbling },
+        { stat: "DEF", value: defending },
+        { stat: "PHY", value: physical },
     ];
 
     const statsElements = playerCard.querySelectorAll(".p-stats p");
@@ -94,19 +138,73 @@ function addPlayer(event) {
         statsNumElements[index].textContent = element.value;
     });
 
-    
     playerCard.querySelector("#logos .country-logo img").src = flag;
     playerCard.querySelector("#logos .country-logo img").alt = nationality;
     playerCard.querySelector("#logos .team-logo img").src = logo;
     playerCard.querySelector("#logos .team-logo img").alt = club;
 
     
-    document.getElementById("playerForm").reset();
 
+    document.getElementById("playerForm").reset();
 }
+
+
 
 document.getElementById("playerForm").addEventListener("submit", addPlayer);
 
+
+
+// essaie du local storage la prochaine étape 
+
+// let players = [
+//     { id: 1, name: "Lionel Messi", position: "RW", rating: 93 },
+//     { id: 2, name: "Cristiano Ronaldo", position: "ST", rating: 91 },
+//     { id: 3, name: "Kevin De Bruyne", position: "CM", rating: 91 },
+//     { id: 4, name: "Virgil Van Dijk", position: "CB", rating: 89 },
+//     { id: 5, name: "Neymar Jr", position: "LW", rating: 90 },
+//     { id: 6, name: "Manuel Neuer", position: "GK", rating: 89 },
+//     { id: 7, name: "Mohamed Salah", position: "RW", rating: 89 },
+//     { id: 8, name: "Joshua kimmich", position: "CM", rating: 89 },
+//     { id: 9, name: "Jan Oblak", position: "GK", rating: 91 },
+//     { id: 10, name: "Luka Modric", position: "CM", rating: 88 },
+//     { id: 11, name: "Vinicius Junior", position: "LW", rating: 89 },
+//     { id: 12, name: "Brahim Diaz", position: "LW", rating: 82 },
+//     { id: 13, name: "Achraf Hakimi", position: "RB", rating: 84 },
+//     { id: 14, name: "Karim Benzema", position: "ST", rating: 90 },
+//     { id: 15, name: "Erling Haaland", position: "ST", rating: 91 },
+//     { id: 16, name: "Alphonso Davies", position: "LB", rating: 84 },
+//     { id: 17, name: "Yassine Bounou", position: "GK", rating: 84 },
+//     { id: 18, name: "Bruno Fernandes", position: "CM", rating: 88 },
+//     { id: 19, name: "Jadon Sancho", position: "LW", rating: 84 },
+//     { id: 20, name: "Trent Alexander-Arnold", position: "RB", rating: 87 },
+
+
+//     
+//   ];
+
+// //   const newPlayer = { id: 21, name: "Kylian Mbappéééé", position:"LW", rating: 91}
+  
+// //   players.push(newPlayer);
+
+// players = players.filter( function(obj) {
+//       return obj.id !== 2;
+// });
+
+
+//   localStorage.setItem('players', JSON.stringify(players));
+  
+  
+//   //   localStorage.setItem(, JSON.stringify(players));
+  
+  
+//   const storedPlayers = JSON.parse(localStorage.getItem('players'));
+  
+
+// if (storedPlayers) {
+//   console.log(storedPlayers);  
+// } else {
+//   console.log("false");
+// }
 
 // function validateForm(event) {
 //     event.preventDefault(); 
