@@ -1,5 +1,5 @@
 body {
-    background-image: url('/assets/img/background-image-3507320_1920.jpg');
+    background-image: url('../img/background-image-3507320_1920.jpg');
     background-size:contain;
     height: 100vh;
     margin: 0;
@@ -24,7 +24,7 @@ body {
     box-sizing: border-box;
     width: 300rem;
     height: 110vh;
-    background-image: url('/assets/img/stadium_background.webp');
+    background-image: url('../img/stadium_background.webp');
     background-size: cover; 
     background-position: center; 
     color: white; 
@@ -109,7 +109,7 @@ body {
     
     width: 9rem;
     height: 11rem;
-    background-image: url('/assets/img/badge_gold.webp');
+    background-image: url('../img/badge_gold.webp');
     background-size: cover; 
     background-position: center; 
     color: white; 
