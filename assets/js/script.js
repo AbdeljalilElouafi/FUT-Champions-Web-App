@@ -33,13 +33,22 @@ const positionsMap = {
 let modifyingPosition = null;
 
 function modifyPlayer(position) {
-    console.log('inside the modify function');
+    console.log('modifyPlayer function triggered with position:', position);
     
     const allPlayers = JSON.parse(localStorage.getItem("players")) || {};
+    console.log('allPlayers:', allPlayers);
+    
+   
+    if (!allPlayers[position]) {
+        console.log(`Position ${position} not found in allPlayers`);
+    } else {
+        console.log(`Position ${position} exists`);
+    }
 
     if (allPlayers[position] && allPlayers[position].length > 0) {
-        const player = allPlayers[position][0]; 
-
+        console.log('inside the condition of modify');
+        const player = allPlayers[position][0];  
+        
         document.getElementById("name").value = player.name;
         document.getElementById("photo").value = player.photo;
         document.getElementById("position").value = player.position;
@@ -56,10 +65,13 @@ function modifyPlayer(position) {
         document.getElementById("physical").value = player.physical;
 
         modifyingPosition = position;
+    } else {
+        console.log('Player data not found or position is empty');
     }
 }
 
-function addPlayer(event) { 
+
+function addPlayer(event) {
     event.preventDefault();
 
     const name = document.getElementById("name").value;
@@ -77,10 +89,18 @@ function addPlayer(event) {
     const defending = document.getElementById("defending").value;
     const physical = document.getElementById("physical").value;
 
+    
+    const diving = document.getElementById("diving") ? document.getElementById("diving").value : null;
+    const handling = document.getElementById("handling") ? document.getElementById("handling").value : null;
+    const kicking = document.getElementById("kicking") ? document.getElementById("kicking").value : null;
+    const reflexes = document.getElementById("reflexes") ? document.getElementById("reflexes").value : null;
+    const speed = document.getElementById("speed") ? document.getElementById("speed").value : null;
+    const positioning = document.getElementById("positioning") ? document.getElementById("positioning").value : null;
+
     if (modifyingPosition) {
         
         updatePlayer(modifyingPosition, {
-            name, photo, position, nationality, flag, club, logo, rating, pace, shooting, passing, dribbling, defending, physical
+            name, photo, position, nationality, flag, club, logo, rating, pace, shooting, passing, dribbling, defending, physical, diving, handling, kicking, reflexes, speed, positioning
         });
         modifyingPosition = null;  
     } else {
@@ -89,9 +109,10 @@ function addPlayer(event) {
                 const benchCard = document.getElementById(`player-card${i}`);
 
                 if (!benchCard.querySelector(".player-name p").textContent) {
-                    addToCard(benchCard, name, rating, position, photo, nationality, flag, club, pace, shooting, passing, dribbling, defending, physical, logo);
+                    
+                    addToCard(benchCard, name, rating, position, photo, nationality, flag, club, pace, shooting, passing, dribbling, defending, physical, logo, diving, handling, kicking, reflexes, speed, positioning);
                     saveToLocalStorage(name, position, {
-                        name, photo, position, nationality, flag, club, logo, rating, pace, shooting, passing, dribbling, defending, physical
+                        name, photo, position, nationality, flag, club, logo, rating, pace, shooting, passing, dribbling, defending, physical, diving, handling, kicking, reflexes, speed, positioning
                     });
                     break;
                 }
@@ -103,9 +124,10 @@ function addPlayer(event) {
         const playerCardId = positionsMap[position];
         const playerCard = document.getElementById(playerCardId);
         
-        addToCard(playerCard, name, rating, position, photo, nationality, flag, club, pace, shooting, passing, dribbling, defending, physical, logo);
+        
+        addToCard(playerCard, name, rating, position, photo, nationality, flag, club, pace, shooting, passing, dribbling, defending, physical, logo, diving, handling, kicking, reflexes, speed, positioning);
         saveToLocalStorage(name, position, {
-            name, photo, position, nationality, flag, club, logo, rating, pace, shooting, passing, dribbling, defending, physical
+            name, photo, position, nationality, flag, club, logo, rating, pace, shooting, passing, dribbling, defending, physical, diving, handling, kicking, reflexes, speed, positioning
         });
     }
 
@@ -127,14 +149,25 @@ function updatePlayer(position, playerData) {
     addToCard(playerCard, playerData.name, playerData.rating, playerData.position, playerData.photo, playerData.nationality, playerData.flag, playerData.club, playerData.pace, playerData.shooting, playerData.passing, playerData.dribbling, playerData.defending, playerData.physical, playerData.logo);
 }
 
-function addToCard(card, name, rating, position, photo, nationality, flag, club, pace, shooting, passing, dribbling, defending, physical, logo) {
-    card.querySelector(".player-name p").textContent = name;
-    card.querySelector(".player-rating p").textContent = `${rating}`;
-    card.querySelector(".player-position p").textContent = `${position}`;
-    card.querySelector(".player-photo img").src = photo;
-    card.querySelector(".player-photo img").alt = name;
+function addToCard(card, name, rating, position, photo, nationality, flag, club, pace, shooting, passing, dribbling, defending, physical, logo, diving, handling, kicking, reflexes, speed, positioning) {
+    
+console.log("In add to card function");
 
-    const stats = [
+card.querySelector(".player-name p").textContent = name;
+card.querySelector(".player-rating p").textContent = `${rating}`;
+card.querySelector(".player-position p").textContent = `${position}`;
+card.querySelector(".player-photo img").src = photo;
+card.querySelector(".player-photo img").alt = name;
+
+
+const stats = position === "GK" ? [
+    { stat: "DIV", value: diving },
+    { stat: "HAN", value: handling },
+    { stat: "KIC", value: kicking },
+    { stat: "REF", value: reflexes },
+    { stat: "SPD", value: speed },
+    { stat: "POS", value: positioning },
+    ] : [
         { stat: "PAC", value: pace },
         { stat: "SHO", value: shooting },
         { stat: "PAS", value: passing },
@@ -150,7 +183,8 @@ function addToCard(card, name, rating, position, photo, nationality, flag, club,
         statsElements[index].textContent = element.stat;
         statsNumElements[index].textContent = element.value;
     });
-
+    
+    
     card.querySelector("#logos .country-logo img").src = flag;
     card.querySelector("#logos .country-logo img").alt = nationality;
     card.querySelector("#logos .team-logo img").src = logo;
@@ -164,6 +198,7 @@ function addToCard(card, name, rating, position, photo, nationality, flag, club,
     }
 }
 
+
 function saveToLocalStorage(name, position, playerData) {
     let allPlayers = JSON.parse(localStorage.getItem("players")) || {}; 
     if (!allPlayers[position]) {
@@ -174,6 +209,9 @@ function saveToLocalStorage(name, position, playerData) {
 }
 
 function deletePlayer(position) {
+
+    console.log("inside the delete function");
+    
     
     // alert("Are u sure you want to delete this player");
     occupiedPositions[position] = false;
@@ -247,6 +285,32 @@ document.querySelectorAll('.modify-btn').forEach(button => {
     });
 });
 
+document.getElementById('position').addEventListener('change', function () {
+    const selectedPosition = this.value;
+    const gkStats = document.getElementById('gkStats');
+    const gkStats2 = document.getElementById('gkStats2');
+    const gkStats3 = document.getElementById('gkStats3');
+    const playerStats = document.getElementById('playerStats');
+    const playerStats2 = document.getElementById('playerStats2');
+    const playerStats3 = document.getElementById('playerStats3');
+
+    
+    if (selectedPosition === 'GK') {
+        gkStats.classList.remove('hidden');
+        gkStats2.classList.remove('hidden');
+        gkStats3.classList.remove('hidden');
+        playerStats.classList.add('hidden');
+        playerStats2.classList.add('hidden');
+        playerStats3.classList.add('hidden');
+    } else {
+        gkStats.classList.add('hidden');
+        gkStats2.classList.add('hidden');
+        gkStats3.classList.add('hidden');
+        playerStats.classList.remove('hidden');
+        playerStats2.classList.remove('hidden');
+        playerStats3.classList.remove('hidden');
+    }
+});
 
 
 // essaie du local storage la prochaine étape 
