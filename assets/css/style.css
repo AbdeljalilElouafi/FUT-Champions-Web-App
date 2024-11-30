@@ -175,17 +175,37 @@ body {
     height: 0.4rem;
 }
 .delete-btn{
-    background-color: rgb(255, 111, 0);
-    width: 1rem;
-    height: 1rem;
-    transform: translate(1.5rem, -4rem);
+    background-color: rgb(244, 7, 7);
+    width: 1.2rem;
+    height: 1.2rem;
+    border-radius: 50%;
+    transform: translate(-2rem, -2rem);
     font-size: 12px;
 }
 .delete-btn:hover{
-    background-color: rgb(233, 9, 9);
-    width: 1.2rem;
-    height: 1.2rem;
-    transform: translate(1.5rem, -4rem);
+    background-color: rgb(149, 28, 15);
+    width: 1.4rem;
+    height: 1.4rem;
+    transform: translate(-2rem, -2rem);
     font-size: 12px;
 }
+.modify-btn{
+    background-color: rgb(38, 141, 12);
+    width: 1.2rem;
+    height: 1.2rem;
+    border-radius: 50%;
+    transform: translate(-3.5rem, -3.5rem);
+    font-size: 12px;
+}
+.modify-btn:hover{
+    background-color: rgb(47, 232, 10);
+    width: 1.4rem;
+    height: 1.4rem;
+    transform: translate(-3.5rem, -3.5rem);
+    font-size: 12px;
+}
+/* .buttons {
+    display: flex;
+    position: absolute;
+} */
 
