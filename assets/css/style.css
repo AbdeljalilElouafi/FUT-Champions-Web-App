@@ -205,3 +205,403 @@ body {
     font-size: 12px;
 }
 
+@media (min-width: 1100px) and (max-width: 1300px) {
+    
+    .container {
+        margin: 2rem;
+        display: grid;
+        justify-content: center;
+        gap: 3rem;
+    }
+    .formation-field {
+
+        padding-left: 0%;
+        margin-right: 2rem;
+        box-sizing: border-box;
+        width: 60rem;
+        height: 110vh;
+        background-image: url('../img/stadium_background.webp');
+        background-size: cover; 
+        background-position: center; 
+        color: white; 
+        text-align: center; 
+        display: grid;
+        justify-content: center;
+    }
+    
+}
+@media (min-width: 800px) and (max-width: 1100px) {
+    
+    .container {
+        margin: 2rem;
+        display: grid;
+        justify-content: center;
+        gap: 3rem;
+    }
+    .formation-field {
+    
+        padding-left: 20%;
+        margin-right: 2rem;
+        box-sizing: border-box;
+        width: 50rem;
+        height: 90vh;
+        background-image: url('../img/stadium_background.webp');
+        background-size: cover; 
+        background-position: center; 
+        color: white; 
+        text-align: center; 
+        display: grid;
+        justify-content: center;
+    }
+
+    .player-card {
+    
+        width: 5rem;
+        height: 9rem;
+        background-image: url('../img/badge_gold.webp');
+        background-size: cover; 
+        background-position: center; 
+        color: white; 
+        text-align: center;
+    }
+
+    
+    .rate-position {
+        display: flex;
+        flex-direction: column;
+        width: 1rem;
+        font-size: 8px;
+        font-weight: bold;
+        color: black;
+        transform: translate(0.2rem, 1.7rem);
+    }
+    .player-photo{
+        width: 4rem;
+        height: 3rem;
+        font-size: x-small;
+        transform: translate(1rem, 0.2rem);
+        
+    }
+    .player-name {
+    
+        width: 4rem;
+        height: 1rem;
+        font-size: 12px;
+        font-weight: bold;
+        color: black;
+        transform: translate(0.5rem, 1.1rem);
+    }
+    .p-stats{
+        display: flex;
+        flex-direction: row;
+        gap: 3px;
+        font-size: 5px;
+        font-weight: 700;
+        color: black;
+        transform: translate(0.3rem,1.1rem);
+    }
+    .stats-num{
+        display: flex;
+        flex-direction: row;
+        gap: 7px;
+        font-size: 5px;
+        font-weight: 700;
+        color: black;
+        transform: translate(0.3rem,1rem);
+    
+    }
+    .logos{
+        display: flex;
+        flex-direction: row;
+        gap: 7px;
+        transform: translate(1.5rem,1rem);
+    }
+    .country-logo{
+        width: 0.7rem;
+        height: 0.5rem;
+        
+    }
+    .team-logo{
+        width: 0.6rem;
+        height: 0.4rem;
+    }
+    .delete-btn{
+        background-color: rgb(244, 7, 7);
+        width: 1rem;
+        height: 1rem;
+        border-radius: 50%;
+        transform: translate(-1rem, -2.2rem);
+        font-size: 10px;
+    }
+    .delete-btn:hover{
+        background-color: rgb(149, 28, 15);
+        width: 1.2rem;
+        height: 1.2rem;
+        transform: translate(-1rem, -2.2rem);
+        font-size: 12px;
+    }
+    .modify-btn{
+        background-color: rgb(38, 141, 12);
+        width: 1rem;
+        height: 1rem;
+        border-radius: 50%;
+        transform: translate(-2.3rem, -3.5rem);
+        font-size: 10px;
+    }
+    .modify-btn:hover{
+        background-color: rgb(47, 232, 10);
+        width: 1.2rem;
+        height: 1.2rem;
+        transform: translate(-2.3rem, -3.5rem);
+        font-size: 12px;
+    }
+
+
+    #player-card1 {
+    
+     
+        transform: translate(-17rem, 2rem);
+    }
+    
+    #player-card2 {
+        
+        
+        
+        transform: translate(-5rem, -8rem);
+    }
+    #player-card3 {
+       
+        
+        transform: translate(8rem, -16rem);
+    }
+    #player-card4 {
+        
+        
+        transform: translate(-20rem, -17rem);
+    }
+    #player-card5 {
+       
+        
+        transform: translate(-5rem, -23rem);
+    }
+    #player-card6 {
+        
+         
+        transform: translate(13rem, -35rem);
+    }
+    #player-card7 {
+       
+         
+        transform: translate(-25rem, -33rem);
+    }
+    #player-card8 {
+        
+        
+        transform: translate(-16rem, -38rem);
+    }
+    #player-card9 {
+       
+        
+        transform: translate(7rem, -47rem);
+    }
+    #player-card10 {
+        
+        
+        transform: translate(15rem, -60rem);
+    }
+    #player-card11 {
+        
+        
+        transform: translate(-5rem, -60rem);
+        
+    }
+
+}
+@media (min-width: 600px) and (max-width: 800px) {
+    
+    .container {
+        background-color: rgb(100, 100, 185);
+        margin: 2rem;
+        display: grid;
+        justify-content: center;
+        gap: 3rem;
+    }
+    .formation-field {
+    
+        padding-left: 20%;
+        margin-right: 2rem;
+        box-sizing: border-box;
+        width: 50rem;
+        height: 90vh;
+        background-image: url('../img/stadium_background.webp');
+        background-size: cover; 
+        background-position: center; 
+        color: white; 
+        text-align: center; 
+        display: grid;
+        justify-content: center;
+    }
+
+    .player-card {
+    
+        width: 5rem;
+        height: 9rem;
+        background-image: url('../img/badge_gold.webp');
+        background-size: cover; 
+        background-position: center; 
+        color: white; 
+        text-align: center;
+    }
+
+    
+    .rate-position {
+        display: flex;
+        flex-direction: column;
+        width: 1rem;
+        font-size: 8px;
+        font-weight: bold;
+        color: black;
+        transform: translate(0.2rem, 1.7rem);
+    }
+    .player-photo{
+        width: 4rem;
+        height: 3rem;
+        font-size: x-small;
+        transform: translate(1rem, 0.2rem);
+        
+    }
+    .player-name {
+    
+        width: 4rem;
+        height: 1rem;
+        font-size: 12px;
+        font-weight: bold;
+        color: black;
+        transform: translate(0.5rem, 1.1rem);
+    }
+    .p-stats{
+        display: flex;
+        flex-direction: row;
+        gap: 3px;
+        font-size: 5px;
+        font-weight: 700;
+        color: black;
+        transform: translate(0.3rem,1.1rem);
+    }
+    .stats-num{
+        display: flex;
+        flex-direction: row;
+        gap: 7px;
+        font-size: 5px;
+        font-weight: 700;
+        color: black;
+        transform: translate(0.3rem,1rem);
+    
+    }
+    .logos{
+        display: flex;
+        flex-direction: row;
+        gap: 7px;
+        transform: translate(1.5rem,1rem);
+    }
+    .country-logo{
+        width: 0.7rem;
+        height: 0.5rem;
+        
+    }
+    .team-logo{
+        width: 0.6rem;
+        height: 0.4rem;
+    }
+    .delete-btn{
+        background-color: rgb(244, 7, 7);
+        width: 1rem;
+        height: 1rem;
+        border-radius: 50%;
+        transform: translate(-1rem, -2.2rem);
+        font-size: 10px;
+    }
+    .delete-btn:hover{
+        background-color: rgb(149, 28, 15);
+        width: 1.2rem;
+        height: 1.2rem;
+        transform: translate(-1rem, -2.2rem);
+        font-size: 12px;
+    }
+    .modify-btn{
+        background-color: rgb(38, 141, 12);
+        width: 1rem;
+        height: 1rem;
+        border-radius: 50%;
+        transform: translate(-2.3rem, -3.5rem);
+        font-size: 10px;
+    }
+    .modify-btn:hover{
+        background-color: rgb(47, 232, 10);
+        width: 1.2rem;
+        height: 1.2rem;
+        transform: translate(-2.3rem, -3.5rem);
+        font-size: 12px;
+    }
+
+
+    #player-card1 {
+    
+     
+        transform: translate(-17rem, 2rem);
+    }
+    
+    #player-card2 {
+        
+        
+        
+        transform: translate(-5rem, -8rem);
+    }
+    #player-card3 {
+       
+        
+        transform: translate(8rem, -16rem);
+    }
+    #player-card4 {
+        
+        
+        transform: translate(-20rem, -17rem);
+    }
+    #player-card5 {
+       
+        
+        transform: translate(-5rem, -23rem);
+    }
+    #player-card6 {
+        
+         
+        transform: translate(13rem, -35rem);
+    }
+    #player-card7 {
+       
+         
+        transform: translate(-25rem, -33rem);
+    }
+    #player-card8 {
+        
+        
+        transform: translate(-16rem, -38rem);
+    }
+    #player-card9 {
+       
+        
+        transform: translate(7rem, -47rem);
+    }
+    #player-card10 {
+        
+        
+        transform: translate(15rem, -60rem);
+    }
+    #player-card11 {
+        
+        
+        transform: translate(-5rem, -60rem);
+        
+    }
+
+}
