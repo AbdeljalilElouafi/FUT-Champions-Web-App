@@ -125,6 +125,7 @@ function addPlayer(event) {
         const playerCard = document.getElementById(playerCardId);
         
         
+        
         addToCard(playerCard, name, rating, position, photo, nationality, flag, club, pace, shooting, passing, dribbling, defending, physical, logo, diving, handling, kicking, reflexes, speed, positioning);
         saveToLocalStorage(name, position, {
             name, photo, position, nationality, flag, club, logo, rating, pace, shooting, passing, dribbling, defending, physical, diving, handling, kicking, reflexes, speed, positioning
@@ -196,6 +197,7 @@ const stats = position === "GK" ? [
             deletePlayer(position);
         });
     }
+    
 }
 
 
