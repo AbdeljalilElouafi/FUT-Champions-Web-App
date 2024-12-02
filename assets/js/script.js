@@ -32,73 +32,87 @@ const positionsMap = {
 
 let modifyingPosition = null;
 
-function modifyPlayer(position) {
-    console.log('modifyPlayer function triggered with position:', position);
-    
-    const allPlayers = JSON.parse(localStorage.getItem("players")) || {};
-    console.log('allPlayers:', allPlayers);
-    
-   
-    if (!allPlayers[position]) {
-        console.log(`Position ${position} not found in allPlayers`);
-    } else {
-        console.log(`Position ${position} exists`);
-    }
 
-    if (allPlayers[position] && allPlayers[position].length > 0) {
-        console.log('inside the condition of modify');
-        const player = allPlayers[position][0];  
-        
-        document.getElementById("name").value = player.name;
-        document.getElementById("photo").value = player.photo;
-        document.getElementById("position").value = player.position;
-        document.getElementById("nationality").value = player.nationality;
-        document.getElementById("flag").value = player.flag;
-        document.getElementById("club").value = player.club;
-        document.getElementById("logo").value = player.logo;
-        document.getElementById("rating").value = player.rating;
-        document.getElementById("pace").value = player.pace;
-        document.getElementById("shooting").value = player.shooting;
-        document.getElementById("passing").value = player.passing;
-        document.getElementById("dribbling").value = player.dribbling;
-        document.getElementById("defending").value = player.defending;
-        document.getElementById("physical").value = player.physical;
+function addToCard(card, name, rating, position, photo, nationality, flag, club, pace, shooting, passing, dribbling, defending, physical, logo, diving, handling, kicking, reflexes, speed, positioning) {
+    
+    console.log("In add to card function");
+    
+    card.querySelector(".player-name p").textContent = name;
+card.querySelector(".player-rating p").textContent = `${rating}`;
+card.querySelector(".player-position p").textContent = `${position}`;
+card.querySelector(".player-photo img").src = photo;
+card.querySelector(".player-photo img").alt = name;
 
-        modifyingPosition = position;
-    } else {
-        console.log('Player data not found or position is empty');
+
+const stats = position === "GK" ? [
+    { stat: "DIV", value: diving },
+    { stat: "HAN", value: handling },
+    { stat: "KIC", value: kicking },
+    { stat: "REF", value: reflexes },
+    { stat: "SPD", value: speed },
+    { stat: "POS", value: positioning },
+] : [
+        { stat: "PAC", value: pace },
+        { stat: "SHO", value: shooting },
+        { stat: "PAS", value: passing },
+        { stat: "DRI", value: dribbling },
+        { stat: "DEF", value: defending },
+        { stat: "PHY", value: physical },
+    ];
+
+    const statsElements = card.querySelectorAll(".p-stats p");
+    const statsNumElements = card.querySelectorAll(".stats-num p");
+    
+    stats.forEach((element, index) => {
+        statsElements[index].textContent = element.stat;
+        statsNumElements[index].textContent = element.value;
+    });
+    
+    
+    card.querySelector("#logos .country-logo img").src = flag;
+    card.querySelector("#logos .country-logo img").alt = nationality;
+    card.querySelector("#logos .team-logo img").src = logo;
+    card.querySelector("#logos .team-logo img").alt = club;
+    
+    const deleteButton = card.querySelector(".delete-btn");
+    if (deleteButton) {
+        deleteButton.addEventListener("click", () => {
+            deletePlayer(position);
+        });
     }
+    
 }
-
 
 function addPlayer(event) {
     event.preventDefault();
-
-    const name = document.getElementById("name").value;
-    const photo = document.getElementById("photo").value;
-    const position = document.getElementById("position").value;
-    const nationality = document.getElementById("nationality").value;
-    const flag = document.getElementById("flag").value;
-    const club = document.getElementById("club").value;
-    const logo = document.getElementById("logo").value;
-    const rating = document.getElementById("rating").value;
-    const pace = document.getElementById("pace").value;
-    const shooting = document.getElementById("shooting").value;
-    const passing = document.getElementById("passing").value;
-    const dribbling = document.getElementById("dribbling").value;
-    const defending = document.getElementById("defending").value;
-    const physical = document.getElementById("physical").value;
-
     
-    const diving = document.getElementById("diving") ? document.getElementById("diving").value : null;
-    const handling = document.getElementById("handling") ? document.getElementById("handling").value : null;
-    const kicking = document.getElementById("kicking") ? document.getElementById("kicking").value : null;
-    const reflexes = document.getElementById("reflexes") ? document.getElementById("reflexes").value : null;
-    const speed = document.getElementById("speed") ? document.getElementById("speed").value : null;
-    const positioning = document.getElementById("positioning") ? document.getElementById("positioning").value : null;
-
-    if (modifyingPosition) {
+    if(validateForm()){
+        const name = document.getElementById("name").value;
+        const photo = document.getElementById("photo").value;
+        const position = document.getElementById("position").value;
+        const nationality = document.getElementById("nationality").value;
+        const flag = document.getElementById("flag").value;
+        const club = document.getElementById("club").value;
+        const logo = document.getElementById("logo").value;
+        const rating = document.getElementById("rating").value;
+        const pace = document.getElementById("pace").value;
+        const shooting = document.getElementById("shooting").value;
+        const passing = document.getElementById("passing").value;
+        const dribbling = document.getElementById("dribbling").value;
+        const defending = document.getElementById("defending").value;
+        const physical = document.getElementById("physical").value;
+    
+        // let new = document.createElemnt('div');
         
+        const diving = document.getElementById("diving") ? document.getElementById("diving").value : null;
+        const handling = document.getElementById("handling") ? document.getElementById("handling").value : null;
+        const kicking = document.getElementById("kicking") ? document.getElementById("kicking").value : null;
+        const reflexes = document.getElementById("reflexes") ? document.getElementById("reflexes").value : null;
+        const speed = document.getElementById("speed") ? document.getElementById("speed").value : null;
+        const positioning = document.getElementById("positioning") ? document.getElementById("positioning").value : null;
+        
+        if (modifyingPosition) {
+            
         updatePlayer(modifyingPosition, {
             name, photo, position, nationality, flag, club, logo, rating, pace, shooting, passing, dribbling, defending, physical, diving, handling, kicking, reflexes, speed, positioning
         });
@@ -133,6 +147,38 @@ function addPlayer(event) {
     }
 
     document.getElementById("playerForm").reset();
+    }
+}
+function modifyPlayer(position) {
+    console.log('In modifyPlayer function');
+    
+    const allPlayers = JSON.parse(localStorage.getItem("players")) || {};
+    console.log('allPlayers:', allPlayers);
+    
+
+    if (allPlayers[position] && allPlayers[position].length > 0) {
+        console.log('inside the condition of modify');
+        const player = allPlayers[position][0];  
+        
+        document.getElementById("name").value = player.name;
+        document.getElementById("photo").value = player.photo;
+        document.getElementById("position").value = player.position;
+        document.getElementById("nationality").value = player.nationality;
+        document.getElementById("flag").value = player.flag;
+        document.getElementById("club").value = player.club;
+        document.getElementById("logo").value = player.logo;
+        document.getElementById("rating").value = player.rating;
+        document.getElementById("pace").value = player.pace;
+        document.getElementById("shooting").value = player.shooting;
+        document.getElementById("passing").value = player.passing;
+        document.getElementById("dribbling").value = player.dribbling;
+        document.getElementById("defending").value = player.defending;
+        document.getElementById("physical").value = player.physical;
+
+        modifyingPosition = position;
+    } else {
+        console.log('Player data not found or position is empty');
+    }
 }
 
 function updatePlayer(position, playerData) {
@@ -150,55 +196,6 @@ function updatePlayer(position, playerData) {
     addToCard(playerCard, playerData.name, playerData.rating, playerData.position, playerData.photo, playerData.nationality, playerData.flag, playerData.club, playerData.pace, playerData.shooting, playerData.passing, playerData.dribbling, playerData.defending, playerData.physical, playerData.logo);
 }
 
-function addToCard(card, name, rating, position, photo, nationality, flag, club, pace, shooting, passing, dribbling, defending, physical, logo, diving, handling, kicking, reflexes, speed, positioning) {
-    
-console.log("In add to card function");
-
-card.querySelector(".player-name p").textContent = name;
-card.querySelector(".player-rating p").textContent = `${rating}`;
-card.querySelector(".player-position p").textContent = `${position}`;
-card.querySelector(".player-photo img").src = photo;
-card.querySelector(".player-photo img").alt = name;
-
-
-const stats = position === "GK" ? [
-    { stat: "DIV", value: diving },
-    { stat: "HAN", value: handling },
-    { stat: "KIC", value: kicking },
-    { stat: "REF", value: reflexes },
-    { stat: "SPD", value: speed },
-    { stat: "POS", value: positioning },
-    ] : [
-        { stat: "PAC", value: pace },
-        { stat: "SHO", value: shooting },
-        { stat: "PAS", value: passing },
-        { stat: "DRI", value: dribbling },
-        { stat: "DEF", value: defending },
-        { stat: "PHY", value: physical },
-    ];
-
-    const statsElements = card.querySelectorAll(".p-stats p");
-    const statsNumElements = card.querySelectorAll(".stats-num p");
-
-    stats.forEach((element, index) => {
-        statsElements[index].textContent = element.stat;
-        statsNumElements[index].textContent = element.value;
-    });
-    
-    
-    card.querySelector("#logos .country-logo img").src = flag;
-    card.querySelector("#logos .country-logo img").alt = nationality;
-    card.querySelector("#logos .team-logo img").src = logo;
-    card.querySelector("#logos .team-logo img").alt = club;
-
-    const deleteButton = card.querySelector(".delete-btn");
-    if (deleteButton) {
-        deleteButton.addEventListener("click", () => {
-            deletePlayer(position);
-        });
-    }
-    
-}
 
 
 function saveToLocalStorage(name, position, playerData) {
@@ -313,6 +310,61 @@ document.getElementById('position').addEventListener('change', function () {
         playerStats3.classList.remove('hidden');
     }
 });
+
+
+function validateForm() {
+    let valid = true;
+
+    const formFields = [
+        { id: 'name', regex: /^[a-zA-Z\s]{2,15}$/, errorId: 'nameError', message: 'Name must be 2-15 characters long and contain only letters' },
+        { id: 'photo', regex: /^(https?:\/\/.*\.(?:png|jpg|jpeg|gif|bmp|webp|svg))$/i, errorId: 'photoError', message: 'Please enter a valid photo URL.' },
+        { id: 'nationality', regex: /^[a-zA-Z\s]{2,50}$/, errorId: 'nationalityError', message: 'Nationality must be valid and contain only letters.' },
+        { id: 'flag', regex: /^(https?:\/\/.*\.(?:png|jpg|jpeg|gif|bmp|webp|svg))$/i, errorId: 'flagError', message: 'Please enter a valid flag URL.' },
+        { id: 'club', regex: /^[a-zA-Z\s]{2,50}$/, errorId: 'clubError', message: 'Club name must be valid and contain only letters.' },
+        { id: 'logo', regex: /^(https?:\/\/.*\.(?:png|jpg|jpeg|gif|bmp|webp|svg))$/i, errorId: 'logoError', message: 'Please enter a valid logo URL.' },
+        { id: 'rating', regex: /^(?:[1-9][0-9]?|100)$/, errorId: 'ratingError', message: 'Rating must be between 0 and 100.' }
+    ];
+
+    
+    formFields.forEach(field => {
+        const inputElement = document.getElementById(field.id);
+        const errorElement = document.getElementById(field.errorId);
+        const value = inputElement.value;
+
+        if (!field.regex.test(value)) {
+            showError(inputElement, errorElement, field.message);
+            valid = false;
+        } else {
+            hideError(inputElement, errorElement);
+        }
+    });
+
+    return valid;  
+}
+
+function showError(inputElement, errorElement, message) {
+    
+    errorElement.textContent = message;
+    errorElement.style.display = 'block'; 
+    inputElement.classList.add('invalid'); 
+    inputElement.classList.remove('valid'); 
+}
+
+function hideError(inputElement, errorElement) {
+    
+    errorElement.style.display = 'none'; 
+    inputElement.classList.remove('invalid'); 
+    inputElement.classList.add('valid'); 
+}
+
+
+
+
+
+
+
+
+
 
 
 // essaie du local storage la prochaine étape 
